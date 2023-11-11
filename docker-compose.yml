@@ -1,0 +1,13 @@
+version: "3" 
+services:
+  mysql:
+    image: arm64v8/mariadb:latest
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+    volumes:
+      - mysql:/var/lib/mysql
+volumes:
+  mysql:
